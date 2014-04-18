@@ -21,6 +21,7 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
+  font-family: Muli;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -51,12 +52,19 @@ table {
   STYLES BEGIN HERE
   **********************************/
 
+/** GLOBAL STYLES **/
+
+a {
+  color: #E84A5F;
+  text-decoration: italic;
+}
+
 .out {
   width: 100%;
 }
 
 .title {
-  width: 590px;
+  width: 415px;
   margin: 0px auto;
   margin-top: 100px;
   padding: 20px;
@@ -72,4 +80,13 @@ h1 {
 .red {
   color: #E84A5F;
   text-decoration: none;
+}
+
+.footer {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: 30em;
+  margin-left: 20px;
 }
