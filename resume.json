@@ -1,0 +1,73 @@
+{
+  "bio": {
+    "firstName": "Tommy",
+    "lastName": "Heffernan",
+    "email": {
+      "work": "tommy@getaround.com",
+      "personal": "tdheff@gmail.com"
+    },
+    "phone": {
+      "personal": "(826) 826-0920"
+    },
+    "summary": "Tommy is from New York, but England originally. He will fill out more of this later.",
+    "location": {
+      "city": "San Francisco",
+      "countryCode": "US",
+      "state": "California"
+    },
+    "websites": {
+      "blog": "http://tommyheffernan.com"
+    },
+    "profiles": {
+      "github": "tdheff",
+      "twitter": "tdheff"
+    }
+  },
+  "work": [
+    {
+      "company": "Getaround",
+      "position": "Software Development Intern",
+      "website": "http://getaround.com",
+      "startDate": "2014-06-11",
+      "endDate": "2012-08-29",
+      "summary": "Developed small project across hte whole stack during the summer.",
+      "highlights": [
+        "Built a series of visualizations for the helpdesk folk."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Harvard College",
+      "startDate": "2011-08-29",
+      "endDate": "2015-05-20",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "courses": [
+        "CS124 - Data Structure and Algorithms",
+        "CS171 - Visualizations",
+        "CS179 - Design of Usable Interactive Systems"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Front End Web Development",
+      "level": "Expert",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ]
+    },
+    {
+      "name": "Back End Web Development",
+      "level": "Proficient",
+      "keywords": [
+        "Node",
+        "GAE",
+        "Rails"
+      ]
+    }
+  ]
+}
