@@ -1,0 +1,17 @@
+/** GLOBAL STYLES **/
+body {
+  background: #ede0be;
+}
+section > div,
+hr {
+  border-color: #ebce94;
+}
+h1 {
+  color: #728621;
+}
+h2 {
+  color: #9da059;
+}
+h3 {
+  color: #728621;
+}
