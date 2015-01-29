@@ -10,8 +10,11 @@
 
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="src/css/jobfeed.css">
   <link rel='icon' type='image/ico' href='http://tdheff.github.io/favicon.ico?v=2'/>
+
+  <script src='js/jquery-2.1.3.min.js'></script>
+  <script src='js/moment.js'></script>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -20,15 +23,67 @@
 
 <body>
 
-  <div class="out">
-    <div class="title">
-      <h1>jobfeed<a href='resume.html' class="red">.</a></h1>
-    </div>
+  <div id="title"><h1>jobfeed v0.0.0.0.1</h1></div>
+  <div id="jobfeed">
+    
   </div>
 
   <!--<div class="footer">
     colorscheme credit: <a href="http://www.colourlovers.com/lover/pseudonympho/loveNote">pseudonympho</a>
   </div>-->
 
+  <script>
+    $(document).ready( function() {
+      var githubUrl = 'https://jobs.github.com/positions.json?callback=?';
+      var authenticUrl = 'http://www.authenticjobs.com/api/?api_key=491336a803e25258b938bf79b15a9764&method=aj.jobs.search&format=json';
+        
+      gatherPostings(githubUrl, function(data) {
+        console.log(data);
+
+        for (var i = 0; i < data.length; i++) {
+          // hack up date string
+          var str = data[i].created_at;
+          var len = str.length;
+          var datestr = str.slice(4, len - 9) + " " + str.slice(len - 4, len);
+          var formattedDatestr = moment(datestr, "MMMM D HH:mm:ss YYYY").fromNow();
+
+          drawPosting($('#jobfeed'),{
+            title: data[i].title,
+            company: data[i].company,
+            date: formattedDatestr,
+            description: data[i].description,
+            url: data[i].url
+          });
+        };
+      });
+
+      $('#jobfeed').on( 'click', '.posting', function(e) {
+        $(e.currentTarget).children('.posting-description').slideToggle();
+
+      });
+      //gatherPostings(authenticUrl, function(data) {
+      //  console.log(data['listings']['listing']);
+      //});
+    });
+
+    var gatherPostings = function(url, next) {
+      $.getJSON( url, next);
+    }
+
+    var drawPosting = function(domel, data) {
+      domel.append("<div class='posting'><span class='posting-title'><a href="
+        + data.url
+        + ">"
+        + data.title
+        + "</a></span><span class='posting-company'>"
+        + data.company
+        + "</span><span class='posting-date'>"
+        + data.date
+        + "</span><div class='posting-description'>"
+        + data.description
+        + "</div></div>");
+    }
+
+  </script>
 </body>
 </html>
