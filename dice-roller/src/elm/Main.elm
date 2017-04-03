@@ -188,17 +188,17 @@ maybeIntsToString rollList =
 
 dieView : Roller -> Int -> Html Msg
 dieView roller nFaces =
-    div []
+    div [ class "die-selector" ]
         [ text (maybeIntToString (Dict.get nFaces roller.die))
-        , button [ onClick (AddDie roller.index nFaces) ] [ text (toString nFaces) ]
+        , button [ onClick (AddDie roller.index nFaces) ] [ text ("+" ++ (toString nFaces)) ]
         ]
 
 
 rollerView : Roller -> Html Msg
 rollerView roller =
-    div []
-        [ text (maybeIntToString (List.head roller.rolls))
-        , div [] (List.map (\s -> div [] [ text s ]) (maybeIntsToString (List.tail roller.rolls)))
+    div [ class "roller" ]
+        [ div [ class "latest-roll" ] [ text (maybeIntToString (List.head roller.rolls)) ]
+        , div [ class "roll-history" ] (List.map (\s -> div [] [ text s ]) (maybeIntsToString (List.tail roller.rolls)))
         , dieView roller 20
         , dieView roller 12
         , dieView roller 10
@@ -211,7 +211,7 @@ rollerView roller =
 
 view : Model -> Html Msg
 view model =
-    div [ style styles.main ]
+    div [ class "main", style styles.main ]
         [ div [] (List.map rollerView model.rollers)
         , button [ onClick AddRoller ] [ text "Add Roller" ]
         ]
