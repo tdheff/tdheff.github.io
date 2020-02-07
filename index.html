@@ -1,14 +1,77 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charSet="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>elm-webpack-starter</title>
-    <meta name="description" content="Elm Webpack Starter"/>
-    <meta name="author" content="Peter Morawiec"/>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
-  <link href="static/css/main-00943154f65ae396031f.css" rel="stylesheet"></head>
-  <body>
-    <div id="main"></div>
-  <script type="text/javascript" src="/static/js/main-00943154f65ae396031f.js"></script></body>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Martel&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("bg.png");
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+        }
+
+        #top-banner {
+            padding: 2rem 4rem;
+            height: 40%;
+            background-image: linear-gradient(#080d21, rgba(8, 13, 33, 0.9), rgba(8, 13, 33, 0.6), rgba(1, 1, 1, 0));
+        }
+
+        #top-banner-content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        #logo {
+            height: 8rem;
+        }
+
+        #name {
+            margin-left: 2rem;
+            font-family: 'Martel', serif;
+            color: #e18733;
+            font-size: 1.5rem;
+        }
+
+        #main-content {
+            font-family: 'Martel', serif;
+            color: #fff;
+            text-align: center;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #main-content a {
+            margin-top: 1rem;
+            width: fit-content;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #080d21;
+            text-decoration: none;
+            font-family: sans-serif;
+            background-color: #e18733;
+            padding: 1rem;
+            border-radius: 0.3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top-banner">
+        <div id="top-banner-content">
+            <img id="logo" src="logo.png">
+            <div id="name">laconian games</div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        Coming Soon
+        <a href="mailto:ivan@laconiangames.com">
+            Contact Us
+        </a>
+    </div>
+</body>
+
 </html>
